@@ -10,6 +10,19 @@ on:
     branches: [main]
     paths-ignore:
       - "*.md"
+      
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning' 
+      print_tags:
+        description: 'True to print to STDOUT'
+        required: true 
+      tags:
+        description: 'Test scenario tags'
+        required: true 
 
 jobs:
   build-deploy:
